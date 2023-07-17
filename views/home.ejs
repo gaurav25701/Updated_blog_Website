@@ -1,0 +1,30 @@
+<%- include("partials/header"); -%>
+
+<h1>News Feed</h1>
+<p class ="news"><%= startingContent %> </p>
+
+<h3>Technology News</h3>
+<p class="tecnews"> Google Lens now lets you identify skin conditions from images captured on phones. </p>
+
+<h3>Sports News</h3>
+<p class="tecnews"> Joe Root’s ton salvages England on first day of Bazball Ashes. </p>
+
+<h3>Bollywood News</h3>
+<p class="tecnews"> Adipurush box office collection day 1: Prabhas-Kriti Sanon starrer gets a beyond-bumper opening. </p>
+
+<h3>International News</h3>
+<p class="tecnews"> Days Before PM Modi's Visit, US Eases Green Card Eligibility Norms. </p>
+
+<h3>Educational News</h3>
+<p class="tecnews"> About half of IITians end up in the US and other trends over nearly a decade. </p>
+<% posts.forEach((post) => { %>
+<h1><%= post.title %></h1>
+
+<p>
+  <%= post.content.substring(0,100) +"..." %>
+  <a href="/posts/<%=post.title%>">Read More </a>
+</p>
+
+<% }); %>
+
+<%- include("partials/footer"); -%>
